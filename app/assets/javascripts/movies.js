@@ -15,16 +15,20 @@ $(window).ready(function(){
       return movie.budget <= 55;
     });
     console.log(lowBudgets);
-    $("#low-budgets").html("<h3>Low Budget Films</h3>" + lowBudgets.map(function(movie){
-      return('<ul><li>' + "Title: " + movie.title + '</li>' + '<li>' + "Budget: " + movie.budget + '</li>' + '<li>' + "Stars: " + movie.stars + '</li></ul>');
-    }).join(""));
+
     var leoMovies = _.filter(movies, function(movie){
       return _.contains(movie.stars, "Leonardo DiCaprio");
     });
     console.log(leoMovies);
-    $("#leo-movies").html("<h3>The Lion of House DiCaprio</h3>" + leoMovies.map(function(movie){
-      return('<ul><li>' + "Title: " + movie.title + '</li>' + '<li>' + "Budget: " + movie.budget + '</li>' + '<li>' + "Stars: " + movie.stars + '</li></ul>');
-    }).join(""));
+
+    $("button").click(function(){
+      $("#low-budgets").html("<h3>Low Budget Films</h3>" + lowBudgets.map(function(movie){
+        return('<ul><li>' + "Title: " + movie.title + '</li>' + '<li>' + "Budget: " + movie.budget + '</li>' + '<li>' + "Stars: " + movie.stars + '</li></ul>');
+      }).join(""));
+      $("#leo-movies").html("<h3>The Lion of House DiCaprio</h3>" + leoMovies.map(function(movie){
+        return('<ul><li>' + "Title: " + movie.title + '</li>' + '<li>' + "Budget: " + movie.budget + '</li>' + '<li>' + "Stars: " + movie.stars + '</li></ul>');
+      }).join(""));
+    });
   });
 });
 
