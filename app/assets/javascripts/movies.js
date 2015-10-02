@@ -24,10 +24,10 @@ $(window).ready(function(){
 
     $("button").click(function(){
       $("#low-budgets").html("<h3>Low Budget Films</h3>" + lowBudgets.map(function(movie){
-        return('<ul><li>' + "Title: " + movie.title + '</li>' + '<li>' + "Budget: " + movie.budget + '</li>' + '<li>' + "Stars: " + movie.stars + '</li></ul>');
+        return('<ul><li>' + "Title: " + movie.title + '</li>' + '<li>' + "Budget: " + movie.budget + '</li>' + '<li>' + "Stars: " + movie.stars.join(", ") + '</li></ul>');
       }));
       $("#leo-movies").html("<h3>The Lion of House DiCaprio</h3>" + leoMovies.map(function(movie){
-        return('<ul><li>' + "Title: " + movie.title + '</li>' + '<li>' + "Budget: " + movie.budget + '</li>' + '<li>' + "Stars: " + movie.stars + '</li></ul>');
+        return('<ul><li>' + "Title: " + movie.title + '</li>' + '<li>' + "Budget: " + movie.budget + '</li>' + '<li>' + "Stars: " + movie.stars.join(", ") + '</li></ul>');
       }));
     });
   });
